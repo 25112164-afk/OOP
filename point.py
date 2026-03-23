@@ -24,8 +24,8 @@ C.hien_thi()
 
 print("\n--- YÊU CẦU 4 & 5 ---")
 
-khoang_cach_B_O = math.sqrt(B.x**2 + B.y**2)
+khoang_cach_B_O = math.hypot(B.x, B.y)
 print(f"Khoảng cách từ B đến O: {khoang_cach_B_O}")
 
-khoang_cach_A_B = math.sqrt((A.x - B.x)**2 + (A.y - B.y)**2)
-print(f"Khoảng cách từ A đến B: {khoang_cach_A_B}")
+khoang_cach_A_B = math.hypot(A.x - B.x, A.y - B.y)
+print(f"Khoảng cách từ A đến B: {khoang_cach_A_B}") 
