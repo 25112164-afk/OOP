@@ -89,33 +89,33 @@ sp1 = HangDienMay("HAIBZK1", "Fridge", "MEHAI", 12_000_000, 24, 220, 150)
 sp2 = HangSanhSu("BIMBIMBAMBAMBUMBUM", "Binh hoa", "MEBIN", 350_000, "su cao cap")
 sp3 = HangThucPham("LILI2", "Sữa tươi", "Vinamilk", 32_000, "2025-01-01", "2025-07-01")
 
-print("── Đa hình: print(sp) ──")
+print("── Da Hinh: print(sp) ──")
 kho = [sp1, sp2, sp3]
 for sp in kho:
     print(sp)          
 
-print("\n── Sắp xếp theo giá ──")
+print("\n── sap xep theo gia ──")
 for sp in sorted(kho):
     print(f"  {sp._gia:>12,.0f}đ | {sp.ten_hang}")
 
-print("\n── So sánh & loại trùng ──")
-sp1_copy = HangDienMay("DM01", "Tủ lạnh", "LG", 12_000_000, 24, 220, 150)
+print("\n── so sanh va loai trung ──")
+sp1_copy = HangDienMay("HAIBZK1", "Fridge", "MEHAI", 12_000_000, 24, 220, 150)
 print(f"  sp1 == sp1_copy? {sp1 == sp1_copy}")
-print(f"  set loại trùng: {len([sp1, sp2, sp1_copy])} → {len(set([sp1, sp2, sp1_copy]))}")
+print(f"  set loai trung: {len([sp1, sp2, sp1_copy])} → {len(set([sp1, sp2, sp1_copy]))}")
 
 print("\n── Validation ──")
 try:
-    sp_loi = HangDienMay("DM99", "Test", "X", -5000, 12, 220, 50)
+    sp_loi = HangDienMay("HAIBZK1", "Fridge", "MEHAI", 12_000_000, 24, 220, 150)
 except GiaKhongHopLe as e:
-    print(f"  Bắt lỗi: {e}")
+    print(f"  Bat Loi: {e}")
 
 try:
     h = HangHoa("X", "Test", "Y", 100)
 except TypeError as e:
     print(f"  ABC: {e}")
 
-print("\n── Lưu file (with) ──")
+print("\n── Luu File (with) ──")
 with open("kho_hang.txt", "w", encoding="utf-8") as f:
     for sp in kho:
         f.write(repr(sp) + "\n")
-print(f"  Đã lưu {len(kho)} sản phẩm")
+print(f"  Da Luu {len(kho)} san pham")
